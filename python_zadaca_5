@@ -1,0 +1,58 @@
+"""Napišite program koji, ovisno o unesenom, ispisuje poruku u konzolu radi li se o dobitku ili promašaju.
+    - Od korisnika zatražite unos 5 brojeva u intervalu [1:20] (uključujući 1 i 20)
+    - Napišite 1. funkciju koja generira 5 random brojeva iz istog skupa
+    - Napišite 2. funkciju koja uspoređuje unesene brojeve s generiranima
+
+Ovisno o broju pogodaka (ako ih ima), ispišite poruku, npr.:
+
+Uneseni su brojevi: 2, 6, 9, 10, 15
+Brojevi izvučeni u ovom kolu: 2, 3, 4, 15, 16
+
+Čestitamo, Vaš dobitak je: "dvojka"!"""
+
+
+import random
+
+lotteryNumbers = []
+
+for i in range(0, 5):
+    number = random.randint(1, 20)
+    while number in lotteryNumbers:
+        number = random.randint(1, 20)
+    
+    lotteryNumbers.append(number)
+
+lotteryNumbers.sort()
+
+userNumbers = []
+for i in range(0, 5):
+    number = int(input("Molimo unesite svoje brojeve u rasponu od 1 do 20: "))
+    while(number in userNumbers or number<1 or number >20):
+        print("Pogrešan unos, pokušajte ponovno.")
+        number = int(input("Molimo unesite svoje brojeve u rasponu od 1 do 20: "))
+    
+    userNumbers.append(number)
+
+print("Brojevi izvučeni u ovom kolu: ")
+print(lotteryNumbers)
+
+print("Uneseni su brojevi: ")
+print(userNumbers)
+
+counter = 0
+for number in userNumbers:
+    if number in lotteryNumbers:
+        counter +=1
+
+print("Čestitamo, Vaš dobitak je: " + str(counter))
+
+
+"""Modificirajte prethodni program tako da, umjesto unosa korisnika, 5 random brojeva stvara funkcija i to 
+sve dok se ne dogodi da su dvije random generirane liste potpuno jednake.
+
+Nakon što je program završio, potrebno je ispisati poruku:
+
+Brojevi generirani funkcijom 1: 3, 6, 11, 16, 18
+Brojevi generirani funkcijom 2: 3, 6, 11, 16, 18
+
+Čestitamo, osvojili ste Loto!"""
