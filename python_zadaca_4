@@ -1,0 +1,42 @@
+'''Zadana je varijabla novcanik = "540 hrk". To je Perin novcanik. Pero voli brzo voziti. Policija voli kazniti
+vozače koji brzo voze. Zatrazite policajca da unoese iznos kazne i ovisno o iznosu, ispisite poruku:
+
+Uneseni iznos je manji od 540 hrk -> Ajme, mogao sam popiti jos jedan gemist.
+Uneseni iznos je veci ili jednak 540 hrk, a manji ili jednak 1000 hrk -> Nije tak ni strasno.
+Uneseni iznos je veci od 1000 hrk -> Hoces ti reci mojoj zeni?
+
+INFO: Kako biste izvukli znamenke iz stringa, najlakse je koristiti slice (jedino sto trebate znati je do kojeg
+indeksa su brojke.)'''
+
+kazna = input("Unesite iznos kazne: ")
+
+if kazna <= 540:
+    print("Ajme, mogao sam popiti još jedan gemišt.")
+
+elif kazna >= 540 and kazna <= 1000:
+    print("Nije tako ni strašno.")
+
+elif kazna >= 1000:
+    print("Hoćeš ti reći mojoj ženi?")
+
+'''Dozvolite korisniku unos druge valute, eur. Koristeci indekse, otkrijite o kojoj je valuti rijec i ispiste poruku.
+npr. "Unesena valuta je: eur" '''
+
+kazna = input("Unesite iznos kazne: ")
+print("Unesena valuta je:" + kazna[-3:])
+
+
+'''Ako je valuta u eurima, napravite konverziju u kune (neka je tecaj 7.65) i ispiste iznos u kunama. Prilagodite 
+program da prihvaća i euro kao valutu (iznose u prvom zadatku).'''
+
+kazna = input("Unesite iznos kazne: ")
+valuta = int(kazna[-12:-3])    #sumnjam da je itko dobio kaznu u prometu u HR iznad 1 milijun kuna :)
+print(valuta)
+
+if kazna[-3:] == "eur":
+    convert = valuta * 7.65
+    print("Iznos kazne u kunama" + str(convert) + "hrk")
+
+elif kazna [-3:] == "hrk":
+    convert = valuta
+    print("Iznos kazne u kunama " str(convert) + " hrk")
