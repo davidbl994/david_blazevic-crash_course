@@ -1,0 +1,74 @@
+'''Definirana je lista brojevi. Iterirajte kroz listu i svaki neparni broj potencirajte.
+Ako je kvadrat broja 49 ili veći, ispišite samo kvadratni korijen tog broja.'''
+
+broj = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+i = 0
+nova_lista = []
+
+while i < len(broj):
+    if broj[i] % 2 !=0:
+        '''print(brojevi[i])'''
+        if broj[i] ** 2 < 49:
+            nova_lista.append(broj[i] ** 2)
+    else:
+        nova_lista.append(broj[i])
+    i += 1
+
+
+
+'''Definirane su dvije liste: Pokemon i Category.
+Napišite program koji ispisuje sljedeće:
+['Bulbasaur 10', 'Charmander 10', 'Bulbasaur 100', 'Charmander 100']
+
+Zadana varijabla:
+Pokemon = ["Bulbasaur", "Charmander"]
+Category = [10, 100]
+
+NOTE: 
+- Za ovaj zadatak proučite "nested while loops"
+- Potrebno je ispisati jednu listu s 4 elementa. točno kako je zadano u zadatku.'''
+
+Pokemon = ["Bulbasaur", "Charmnader"]
+Category = [10, 100]
+
+
+for x in range(len(Pokemon)):
+    for y in range(len(Category)):
+            print(str(x) + " " + str(y))
+
+'''Dobili ste pristup FBI bazi podataka i želite se našaliti s njihovim zaposlenicima. 
+Zapisi koje ste pronašili u bazi.
+Zahtjevi:
+- editirajte ime zaposlenika 267 u Perv, a zaposlenika 8765 u Saad Maan
+- Neka je zaposlenik 8765 maloljetan -> 16
+- Neka im je obojici plaća unutar hrvatskog prosjeka -> 550 
+- Obrišite gradove
+- Zamjenite im vrijednosti (267 treba imati key:values zaposlenika 8765 i obrnuto)'''
+
+zaposlenik_267 = { "name": "Peter", "age": 46, "salary": 24098, "city": "Washington"}
+zaposlenik_8765 = {"name": "Adam", "age": 52, "salary": 19894, "city": "Colorado"}
+
+zaposlenik_267["name"] = "Perv"
+print(zaposlenik_267)
+zaposlenik_8765["name"] = "Saad Maan"
+print(zaposlenik_8765)
+
+zaposlenik_8765["age"] = 16
+print(zaposlenik_8765)
+
+zaposlenik_267["salary"] = 550
+print(zaposlenik_267)
+zaposlenik_8765["salary"] = 550
+print(zaposlenik_8765)
+
+del zaposlenik_267["city"]
+print(zaposlenik_267)
+del zaposlenik_8765["city"]
+print(zaposlenik_8765)
+
+zaposlenik_8765 = zaposlenik_267
+print(zaposlenik_8765)
+
+
+zaposlenik_267 = zaposlenik_8765
+print(zaposlenik_267)
