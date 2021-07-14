@@ -1,0 +1,45 @@
+''' Zadatak 1: KO BI REK'O
+Definirajte rečenicu imena Ludilo koja izgleda kao u nastavku. Koristeći metodu stringa, obrni redoslijed slova i otkrij poruku.
+
+Zadana varijabla:'''
+correct_ludilo = "?oker ib oK .unohtyP yhtnoM op emi oibod ej nohtyP ,aD" [::-1]
+print(correct_ludilo)
+
+
+''' Zadatak 2: SLAJSANJE
+Koristeći "slice" metodu, ukloni suvišne razmake.
+
+Zadana varijabla:'''
+
+slice = "M a kuz im taj sli ce kao da sam ga sam pi sao"
+x = slice.replace(" ", "")
+print(x)
+
+correct_x = x[:2] + " " + x[2:7] + " " + x[7:10] + " " + x[10:15] + " " + x[15:18] + " " + x[18:20] + " " + x[20:23] + " " + x[23:25] + " " + x[25:28] + " " + x[28:33]
+print(correct_x)
+
+''' Zadatak 3: HEMINGWAY
+Zatražite korisnika unos imena knjige i autora. Napišite program koji zadovoljava navedena pravila i ispišite navedene poruke.
+
+Pravila:
+- Ime knjige ima više od 30 znakova, a autor nije Hemingway -> "Ma jel' moguće?"
+- Ime knjige ima više od 30 znakova, a autor knjige je Hemingway -> "Ok, tako već može"
+- Ime knjige ima 25 znakova, a polje autora je prazno -> "Šta, nismo bili u školi?"
+- Ime knjige počinje s "In" i bilo koji od gornjih uvjeta je ispunjen -> "Skoro Infinum".''' 
+
+ime_knjige = input("Upišite ime knjige: ")
+ime_autora = input("Upišite ime autora: ")
+duzina_knjige = len(ime_knjige)
+print(duzina_knjige)
+
+if duzina_knjige > 30 and ime_autora != "Hemingway":
+    print("Ma jel' moguće")
+
+elif duzina_knjige > 30 and ime_autora == "Hemingway":
+    print("Ok tako već može")
+
+elif duzina_knjige == 25 and ime_autora =="":
+    print("Šta, nismo bili u školi")
+
+elif ime_knjige == "In" or ime_autora != "Hemingway" or ime_autora == "Hemingway" or ime_autora =="":
+    print("Skoro Infinum")
