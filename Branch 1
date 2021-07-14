@@ -1,1 +1,24 @@
+''' 1) Definirajte varijablu imena PyCharm u koju trebate spremiti vrijednost True.
+Napišite program koji će ispisati sljedeću poruku koristeći definiranu varijablu PyCharm.'''
+
+PyCharm = "True" 
+print("Python setup zavrsen - " + PyCharm + "!")
+
+
+
+''' 2) Juran je bio nestašan i uspio je zbrojiti "nezbrojivo", varijable integer = 5 i
+string = "12.5". Kako biste vi to napravili?'''
+
+integer = 5
+string = "12.5"
+sum = integer + float(string)
+print(sum)
+
+''' 3) U stringu "QA nije najbolji" su se potkrala dva slova koja ne pripadaju toj rečenici.
+Zbrojite indexe tih slova i ispište rezultat.'''
+
+dev = "QA nije najbolji"
+print(dev.find("n"))    #ispisi index slova "n"
+print(dev.find("i"))    #ispisi index slova "i"
+print(int(dev.find("n") + int(dev.find("i"))))  #zbroj indexa slova "n" i "i"
 
